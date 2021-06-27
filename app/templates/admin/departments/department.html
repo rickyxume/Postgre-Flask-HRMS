@@ -1,0 +1,80 @@
+<!-- app/templates/admin/departments/department.html -->
+{% import "bootstrap/wtf.html" as wtf %}
+{% block body %}
+    <html lang="zh-CN" class="h-100" xmlns="http://www.w3.org/1999/html">
+    {% include 'head.html' %}
+    <body class="h-100 p-3" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <div class="main-content-container container-fluid px-4">
+    <main class="main-content col-lg-10 col-md-9 col-sm-12">
+        {% include 'message.html' %}
+        {% include 'header.html' %}
+        <div class="card card-small mb-4">
+              <div class="card-header border-bottom">
+                  {% if add_department %}
+                      <h5 class="m-0">新增部门</h5>
+                  {% else %}
+                      <h5 class="m-0">编辑部门</h5>
+                  {% endif %}
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-3">
+                  <div class="row">
+
+                    <div class="col col-lg-12">
+                    {{ wtf.quick_form(form) }}
+    <!--
+    {#                        <form method="post"#}
+    {#                              {% if add_department %}#}
+    {#                                  action="{{ url_for('admin.add_department.id') }}"#}
+    {#                              {% else %}#}
+    {#                                  action="{{ url_for('admin.edit_department.id') }}"#}
+    {#                              {% endif %}#}
+    {#                                  >#}
+    {#                            {{ form.csrf_token }}#}
+    {#                              <div class="form-group">#}
+    {#                                  <strong class="text-muted d-block mb-2">{{ form.name.label }}</strong>#}
+    {#                                  {{ form.name(class="form-control") }}#}
+    {#                                  <strong class="text-muted d-block mb-2">{{ form.description.label }}</strong>#}
+    {#                                  {{ form.description(class="form-control") }}#}
+    {#                                  <br/>#}
+    {#                                  <strong class="text-muted d-block mb-2">{{ form.base.label }}</strong>#}
+    {#                                  {{ form.base(class="form-control") }}#}
+    {#                                  <strong class="text-muted d-block mb-2">{{ form.hc.label }}</strong>#}
+    {#                                  {{ form.hc(class="form-control") }}#}
+    {#                              </div>#}
+    {#                              <div class="text-center col-lg-8">#}
+    {#                                  {{ wtf.form_field(form.submit, class="btn btn-lg btn-accent") }}#}
+    {#                              </div>#}
+    {#                        </form>#}
+    -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        </div>
+
+    </main>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <div style="flex: 0 0 auto;">
+            {% include 'footer.html' %}
+        </div>
+    </body>
+
+    {% include 'script.html' %}
+    </html>
+{% endblock %}

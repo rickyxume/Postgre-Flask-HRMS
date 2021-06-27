@@ -1,0 +1,21 @@
+<!-- app/templates/base.html -->
+<!DOCTYPE html>
+<html class="no-js h-100" lang="zh-CN">
+{% include 'head.html' %}
+<body class="h-100">
+    <div class="container-fluid">
+      <div class="row">
+          {% include 'navbase.html' %}
+          <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+             {% include 'navbar.html' %}
+              <div class="main-content-container container-fluid px-4">
+                  {% block body %}
+                  {% endblock %}
+              </div>
+          {% include 'footer.html' %}
+          </main>
+      </div>
+          {% include 'script.html' %}
+      </div>
+</body>
+</html>

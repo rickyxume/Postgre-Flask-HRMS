@@ -1,0 +1,70 @@
+<!-- app/templates/auth/login.html -->
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/utils.html" as utils %}
+{% block title %}Login{% endblock %}
+<!--
+{#{% block body %}#}
+{#<div class="content-section">#}
+{#  <br/>#}
+{#  {{ utils.flashed_messages() }}#}
+{#  <br/>#}
+{#  <div class="center">#}
+{#    <h1>登入你的账号</h1>#}
+{#    <br/>#}
+{#    {{ wtf.quick_form(form) }}#}
+{#  </div>#}
+{#</div>#}
+{#{% endblock %}#}
+-->
+{% block body %}
+    <div class="alert alert-secondary alert-dismissible fade mb-0" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+        </button>
+        {{ utils.flashed_messages() }}
+    </div>
+    <!-- Page Header -->
+    <div class="page-header row no-gutters py-4">
+          <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+              <h3 class="page-title center-block"> 登录界面 </h3>
+          </div>
+    </div>
+    <!-- End Page Header -->
+    <div class="col-lg-8">
+        <div class="card card-title mb8">
+          <div class="card-header border-bottom">
+            <h5 class="m-0">登录账号</h5>
+          </div>
+            <ul class="list-group">
+                <li class="list-group-item p-3">
+                    <form method="post" class="form-group" action="{{ url_for('auth.login') }}">
+                        {{ form.csrf_token }}
+                        <strong class="text-muted d-block mb-2">邮箱</strong>
+                        <div class="form-group">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">email</span>
+                                </div>
+                                  {{ form.email(class="form-control") }}
+                              </div>
+                        </div>
+                        <strong class="text-muted d-block mb-2">密码</strong>
+                        <div class="form-group">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text material-icons">lock</span>
+                                </div>
+                                  {{ form.password(class="form-control") }}
+                              </div>
+                        </div>
+                        <div class="text-center m-0">
+                            {{ wtf.form_field(form.submit, class="btn btn-accent btn-pill") }}
+                        </div>
+                    </form>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

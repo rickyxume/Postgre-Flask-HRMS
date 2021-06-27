@@ -1,0 +1,65 @@
+
+{% import "bootstrap/wtf.html" as wtf %}
+{% block body %}
+    <html lang="zh-CN" class="h-100" xmlns="http://www.w3.org/1999/html">
+    {% include 'head.html' %}
+    <body class="h-100 p-3" style="display: flex; flex-direction: column; flex: 1 0 auto;">
+    <div class="main-content-container container-fluid px-4">
+    <main class="main-content col-lg-10 col-md-9 col-sm-12">
+        {% include 'message.html' %}
+        {% include 'header.html' %}
+        <div class="card card-small mb-4">
+              <div class="card-header border-bottom">
+                    {% if add_role %}
+                        <h1>增设职位</h1>
+                    {% else %}
+                        <h1>编辑职位</h1>
+                    {% endif %}
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item p-3">
+                  <div class="row">
+
+                    <div class="col col-lg-12">
+                    {{ wtf.quick_form(form) }}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+        </div>
+
+    </main>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <div style="flex: 0 0 auto;">
+            {% include 'footer.html' %}
+        </div>
+    </body>
+
+    {% include 'script.html' %}
+    </html>
+{% endblock %}

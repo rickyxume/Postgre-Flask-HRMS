@@ -1,0 +1,92 @@
+<!-- app/templates/admin/roles/roles.html -->
+{% extends "admin/base/rolebase.html" %}
+{% import "bootstrap/utils.html" as utils %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block body %}
+    <div class="main-content-container container-fluid px-4">
+        {% include 'message.html' %}
+        {% if roles %}
+            {% include 'header.html' %}
+            <div class="row">
+                  <div class="col-lg-12">
+                    <div class="card card-small mb-4">
+                      <div class="card-header border-bottom">
+                        <h6 class="m-0">职位</h6>
+                      </div>
+                      <div class="card-body p-0 pb-3 text-center">
+                        <table class="table mb-0">
+                          <thead class="bg-light">
+                            <tr>
+                                <th scope="col" class="border-0">职位编号</th>
+                                <th scope="col" class="border-0">名称</th>
+                                <th scope="col" class="border-0">描述</th>
+                                <th scope="col" class="border-0">人数</th>
+                                <!--<th scope="col" class="border-0">平均薪资</th>-->
+                                <th scope="col" class="border-0">编辑</th>
+                                <th scope="col" class="border-0">删除</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for role in roles %}
+                            <tr>
+                                <td> {{ role.id }} </td>
+                                <td> {{ role.name }} </td>
+                                <td> {{ role.description }} </td>
+                                <td>
+                                    {% if role.employees %}
+                                        {{ role.employees.count() }}
+                                    {% else %}
+                                        0
+                                    {% endif %}
+                                </td>
+                            <!--这里计算平均薪资，不知道对不对，先放着-->
+                            <!--
+{#                                <td>#}
+{#                                {% from sqlalchemy import func %}#}
+{#                                    {% if role.average_wage %}#}
+{#                                        {{ role.average_wage.name }}#}
+{#                                    {% else %}#}
+{#                                        0#}
+{#                                    {% endif %}#}
+{#                                </td>#}
+                                -->
+
+                                <td>
+                                    <a href="{{ url_for('admin.edit_role', id=role.id) }}">
+                                        <i class="material-icons">create</i> 编辑
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="text-danger" href="{{ url_for('admin.delete_role', id=role.id) }}">
+                                        <i class="material-icons ">delete</i> 删除
+                                    </a>
+                                </td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+        {% else %}
+            <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <i class="material-icons">error</i>
+                <strong>职位列表空空的，可怜兮兮...加一个吧</strong>
+            </div>
+            <br>
+        {% endif %}
+            <div class="col-lg-12 text-center">
+                    <a class="btn btn-lg btn-accent" href="{{ url_for('admin.add_role') }}">
+                        <i class="material-icons material-icons-size64">
+                            group_add</i>
+                        增设职位
+                    </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

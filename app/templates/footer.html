@@ -1,0 +1,28 @@
+{% block footer %}
+<!--页脚部分-->
+    <div class="main-content">
+        <footer class="main-footer d-flex p-2 px-3 bg-white border-top ">
+          <ul class="nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('home.homepage') }}">主页</a>
+              </li>
+              {% if current_user.is_authenticated %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('auth.logout') }}">登出</a>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('auth.register') }}">注册</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('auth.login') }}">登录</a>
+                  </li>
+              {% endif %}
+          </ul>
+          <span class="copyright ml-auto my-auto mr-2">Copyright © 2020
+              <a href="https://github.com/rickyxume" rel="nofollow"> HRMS <sup>by许汝超</sup></a>
+            </span>
+        </footer>
+    </div>
+
+{% endblock %}

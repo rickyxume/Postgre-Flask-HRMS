@@ -1,0 +1,17 @@
+<!-- app/templates/errors/500.html -->
+
+{% extends "base.html" %}
+{% block title %}Internal Server Error{% endblock %}
+{% block body %}
+    <!-- / .main-navbar -->
+    <div class="error">
+        <div class="error__content">
+              <h2>500</h2>
+              <h3>Oops！Internal Server Error</h3>
+              <p>服务器可能需要拍一拍,请再试一次</p>
+              <button href="{{ url_for('home.homepage') }}" type="button" class="btn btn-accent btn-pill">&larr; Go Home</button>
+        </div>
+        <!-- / .error_content -->
+    </div>
+    <!-- / .error -->
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- app/templates/errors/404.html -->
+{% extends "base.html" %}
+{% block title %}Page Not Found{% endblock %}
+{% block body %}
+    <div class="error">
+        <div class="error__content">
+              <h2>404</h2>
+              <h3>Oops！Page Not Found</h3>
+              <p>网页可能飞去月球了,请再试一次</p>
+            <a class="btn btn-accent btn-pill" href="{{ url_for('home.homepage') }}" style="line-height: 25px;">
+              &larr; Go Home
+            </a>
+        </div>
+    </div>
+{% endblock %}

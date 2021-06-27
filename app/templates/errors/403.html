@@ -1,0 +1,17 @@
+<!-- app/templates/errors/403.html -->
+
+{% extends "base.html" %}
+{% block title %}Forbidden{% endblock %}
+{% block body %}
+    <!-- / .main-navbar -->
+    <div class="error">
+        <div class="error__content">
+              <h2>403</h2>
+              <h3>Oops！Forbidden</h3>
+              <p>你权限不够喔~无法访问这里</p>
+              <button href="{{ url_for('home.homepage') }}" type="button" class="btn btn-accent btn-pill">&larr; Go Home</button>
+        </div>
+        <!-- / .error_content -->
+    </div>
+    <!-- / .error -->
+{% endblock %}

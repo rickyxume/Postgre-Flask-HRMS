@@ -1,0 +1,61 @@
+<!-- app/templates/home/admin_dashboard.html -->
+{% extends "base.html" %}
+{% block title %}
+    管理员看板
+{% endblock %}
+{% block body %}
+    <div class="main-content-container container-fluid px-4">
+    {% include 'header.html' %}
+        <div class="row">
+            <div class="col-lg-12">
+
+                <br>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                    <div class="card card-small h-100">
+                        <div class="card-header border-bottom">
+                            <h6 class="m-0">男女比例</h6>
+                        </div>
+                        <div class="card-body d-flex py-0">
+                            <canvas height="220" class="blog-users-by-device m-auto"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-lg-3 col-md-12 col-sm-12 mb-4">
+                <div class="card card-small">
+                  <div class="card-header border-bottom">
+                    <h6 class="m-0">薪资排行榜</h6>
+                  </div>
+                  <div class="card-body p-0">
+                    <ul class="list-group list-group-small list-group-flush">
+                        {% for employee in employees %}
+                            <li class="list-group-item d-flex px-3">
+                                <span class="text-semibold text-fiord-blue">
+                                    {{ employee.full_name }}</span>
+                                <span class="ml-auto text-right text-semibold text-reagent-gray">
+                                    {{ employee.wage }}</span>
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="card-footer border-top">
+                    <div class="row">
+                      <div class="col text-right view-report">
+                        <a href="{{ url_for('admin.list_sort_by_employee_wage') }}">详情 →</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+        </div>
+    </div>
+    {% include 'script.html' %}
+{% endblock %}

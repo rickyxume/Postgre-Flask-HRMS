@@ -1,0 +1,40 @@
+<!-- app/templates/home/dashboard.html -->
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block body %}
+<div class="intro-dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>看板</h1>
+                    <h3>用户数据看板功能正在开发...所以这里啥都没...</h3>
+                    <hr class="intro-divider">
+                    <img style="text-align: left;position: relative;padding-right: 8px" src="{{ url_for('static', filename='img/icon.jpg') }}">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!--
+{#{% block body %}#}
+{#<div class="intro-dashboard">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-12">#}
+{#                <div class="intro-message">#}
+{#                    <h1>看板</h1>#}
+{#                    <h3>太菜了所以这里啥都没嘿嘿嘿！</h3>#}
+{#                    <hr class="intro-divider">#}
+{#                    <img style="text-align: left;position: relative;padding-right: 8px" src="{{ url_for('static', filename='img/icon.jpg') }}">#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#{% endblock %}#}
+-->

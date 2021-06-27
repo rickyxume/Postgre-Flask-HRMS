@@ -1,0 +1,249 @@
+文件夹 PATH 列表
+卷序列号为 0C7E-14F6
+C:\USERS\RICKY\PYCHARMPROJECTS\POSTGRE-FLASK-HRMS
+│  config.py
+│  readme
+│  requirements.txt
+│  run.py
+│  test.py
+│  tree.txt
+│  
+├─.idea
+│
+├─app
+│  │  models.py
+│  │  __init__.py
+│  │  
+│  ├─admin
+│  │  │  forms.py
+│  │  │  views.py
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          forms.cpython-38.pyc
+│  │          views.cpython-38.pyc
+│  │          __init__.cpython-38.pyc
+│  │          
+│  ├─auth
+│  │  │  forms.py
+│  │  │  views.py
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          forms.cpython-38.pyc
+│  │          views.cpython-38.pyc
+│  │          __init__.cpython-38.pyc
+│  │          
+│  ├─home
+│  │  │  views.py
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          views.cpython-38.pyc
+│  │          __init__.cpython-38.pyc
+│  │          
+│  ├─static
+│  │  ├─css
+│  │  │  │  style.css
+│  │  │  │  
+│  │  │  └─styles
+│  │  │      │  extras.1.1.0.min.css
+│  │  │      │  shards-dashboards.1.1.0.css
+│  │  │      │  shards-dashboards.1.1.0.min.css
+│  │  │      │  
+│  │  │      ├─accents
+│  │  │      │      danger.1.1.0.css
+│  │  │      │      danger.1.1.0.min.css
+│  │  │      │      info.1.1.0.css
+│  │  │      │      info.1.1.0.min.css
+│  │  │      │      secondary.1.1.0.css
+│  │  │      │      secondary.1.1.0.min.css
+│  │  │      │      success.1.1.0.css
+│  │  │      │      success.1.1.0.min.css
+│  │  │      │      warning.1.1.0.css
+│  │  │      │      warning.1.1.0.min.css
+│  │  │      │      
+│  │  │      └─scss
+│  │  │          │  shards-dashboards.scss
+│  │  │          │  _alert.scss
+│  │  │          │  _badge.scss
+│  │  │          │  _button-group.scss
+│  │  │          │  _buttons.scss
+│  │  │          │  _card.scss
+│  │  │          │  _custom-forms.scss
+│  │  │          │  _custom-sliders.scss
+│  │  │          │  _dropdown.scss
+│  │  │          │  _icons.scss
+│  │  │          │  _images.scss
+│  │  │          │  _input-group.scss
+│  │  │          │  _list-group.scss
+│  │  │          │  _navbar.scss
+│  │  │          │  _overrides.scss
+│  │  │          │  _reboot.scss
+│  │  │          │  _utilities.scss
+│  │  │          │  _variables.scss
+│  │  │          │  
+│  │  │          ├─accent-variations
+│  │  │          │      danger.scss
+│  │  │          │      info.scss
+│  │  │          │      secondary.scss
+│  │  │          │      success.scss
+│  │  │          │      warning.scss
+│  │  │          │      
+│  │  │          ├─blocks
+│  │  │          │      _main-content.scss
+│  │  │          │      _main-footer.scss
+│  │  │          │      _main-navbar.scss
+│  │  │          │      _main-sidebar.scss
+│  │  │          │      _page-header.scss
+│  │  │          │      
+│  │  │          ├─components
+│  │  │          │      _card-post.scss
+│  │  │          │      _error.scss
+│  │  │          │      
+│  │  │          ├─plugins
+│  │  │          │      _quill.scss
+│  │  │          │      
+│  │  │          ├─templates
+│  │  │          │      _blog-add-new-post.scss
+│  │  │          │      _blog-overview.scss
+│  │  │          │      _common.scss
+│  │  │          │      
+│  │  │          └─utilities
+│  │  │                  _borders.scss
+│  │  │                  _general.scss
+│  │  │                  _text.scss
+│  │  │                  
+│  │  ├─img
+│  │  │      icon.jpg
+│  │  │      
+│  │  └─js
+│  │      │  extras.1.1.0.min.js
+│  │      │  shards-dashboards.1.1.0.js
+│  │      │  shards-dashboards.1.1.0.js.map
+│  │      │  shards-dashboards.1.1.0.min.js
+│  │      │  
+│  │      └─app
+│  │              app-blog-overview.1.1.0.js
+│  │              app-blog-overview.1.1.0.min.js
+│  │              app-components-overview.1.1.0.js
+│  │              app-components-overview.1.1.0.min.js
+│  │              
+│  ├─templates
+│  │  │  base.html
+│  │  │  footer.html
+│  │  │  head.html
+│  │  │  header.html
+│  │  │  message.html
+│  │  │  navbar.html
+│  │  │  navbase.html
+│  │  │  script.html
+│  │  │  user-profile-lite.html
+│  │  │  
+│  │  ├─admin
+│  │  │  ├─base
+│  │  │  │      departmentbase.html
+│  │  │  │      employeebase.html
+│  │  │  │      rolebase.html
+│  │  │  │      
+│  │  │  ├─departments
+│  │  │  │      department.html
+│  │  │  │      departments.html
+│  │  │  │      
+│  │  │  ├─employees
+│  │  │  │      employee-profile.html
+│  │  │  │      employee.html
+│  │  │  │      employees.html
+│  │  │  │      
+│  │  │  └─roles
+│  │  │          role.html
+│  │  │          roles.html
+│  │  │          
+│  │  ├─auth
+│  │  │  │  login.html
+│  │  │  │  register.html
+│  │  │  │  user-profile.html
+│  │  │  │  
+│  │  │  └─bootstrap
+│  │  │          utils.html
+│  │  │          wtf.html
+│  │  │          
+│  │  ├─errors
+│  │  │      403.html
+│  │  │      404.html
+│  │  │      500.html
+│  │  │      
+│  │  └─home
+│  │          admin_dashboard.html
+│  │          dashboard.html
+│  │          index.html
+│  │          
+│  └─__pycache__
+│          models.cpython-38.pyc
+│          __init__.cpython-38.pyc
+│          
+├─Flask-WhooshAlchemyPlus
+│  │  .gitignore
+│  │  .gitmodules
+│  │  flask_whooshalchemyplus.py
+│  │  LICENSE.txt
+│  │  MANIFEST.in
+│  │  README.rst
+│  │  requirements.txt
+│  │  setup.cfg
+│  │  setup.py
+│  │  tox.ini
+│  │  
+│  ├─build
+│  │  ├─bdist.win-amd64
+│  │  └─lib
+│  │          flask_whooshalchemyplus.py
+│  │          
+│  ├─dist
+│  │      Flask_WhooshAlchemyPlus-0.7.6-py3.8.egg
+│  │      
+│  ├─doc
+│  │  │  conf.py
+│  │  │  index.rst
+│  │  │  Makefile
+│  │  │  
+│  │  ├─_static
+│  │  │      logo.png
+│  │  │      
+│  │  └─_themes
+│  ├─Flask_WhooshAlchemyPlus.egg-info
+│  │      dependency_links.txt
+│  │      not-zip-safe
+│  │      PKG-INFO
+│  │      requires.txt
+│  │      SOURCES.txt
+│  │      top_level.txt
+│  │      
+│  └─test
+│          test_all.py
+│          __init__.py
+│          
+├─instance
+│      config.py
+│      
+├─migrations
+│  │  alembic.ini
+│  │  env.py
+│  │  README
+│  │  script.py.mako
+│  │  
+│  ├─versions
+│  │  │  59c792f7d902_.py
+│  │  │  7c9526863d46_.py
+│  │  │  
+│  │  └─__pycache__
+│  │          59c792f7d902_.cpython-38.pyc
+│  │          7c9526863d46_.cpython-38.pyc
+│  │          
+│  └─__pycache__
+│          env.cpython-38.pyc
+│          
+└─__pycache__
+        config.cpython-38.pyc
+        run.cpython-38.pyc
+        

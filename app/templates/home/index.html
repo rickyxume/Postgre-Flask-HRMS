@@ -1,0 +1,15 @@
+<!-- app/templates/home/index.html -->
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    <div class="main-content-container container-fluid px-4">
+        {% include 'message.html' %}
+        {% include 'header.html' %}
+    <div>
+        <a class="material-icons">check</a>
+    </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,161 @@
+<!-- app/templates/auth/register.html -->
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/utils.html" as utils %}
+{% block title %}Register{% endblock %}
+<!--
+{#{% block body %}#}
+{#<div class="content-section">#}
+{#  <br/>#}
+{#  {{ utils.flashed_messages() }}#}
+{#  <br/>#}
+{#  <div class="center">#}
+{#    <h1>注册</h1>#}
+{#    <br/>#}
+{#    {{ wtf.quick_form(form) }}#}
+{#  </div>#}
+{#</div>#}
+{#{% endblock %}#}
+-->
+<!--
+{#{% block body %}#}
+{#    <!-- Page Header -->#}
+{#    <div class="page-header row no-gutters py-4" xmlns="http://www.w3.org/1999/html">#}
+{#          <div class="col-12 col-sm-4 text-center text-sm-left mb-0">#}
+{#              <h3 class="page-title center-block"> 注册界面 </h3>#}
+{#          </div>#}
+{#    </div>#}
+{#    <!-- End Page Header -->#}
+{#    <div class="col-lg-8">#}
+{#        <div class="card card-title mb8">#}
+{#          <div class="card-header border-bottom">#}
+{#            <h5 class="m-0">注册账号</h5>#}
+{#          </div>#}
+{##}
+{#            <ul class="list-group">#}
+{#                <li class="list-group-item">#}
+{#                {{ wtf.quick_form(form) }}#}
+{#                </li>#}
+{#            </ul>#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+-->
+
+{% block body %}
+    <!-- Page Header -->
+    <div class="page-header row no-gutters py-4" xmlns="http://www.w3.org/1999/html">
+          <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+              <h3 class="page-title center-block"> 注册界面 </h3>
+          </div>
+    </div>
+    <!-- End Page Header -->
+    <div class="col-lg-8">
+        <div class="card card-title mb8">
+          <div class="card-header border-bottom">
+            <h5 class="m-0">注册账号</h5>
+          </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <form method="post" class="form-group" action="{{ url_for('auth.register') }}" >
+                        <div class="border-light">
+                            <div class="form-row p-3">
+                                <div class="form-group col-md-12">
+                                    {{ form.csrf_token }}
+                                    <strong class="text-muted d-block mb-2">{{ form.username.label }}</strong>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text material-icons">person</span>
+                                        </div>
+                                        {{ form.username(class_="form-control") }}
+                                    </div>
+                                    <strong class="text-muted d-block mb-2">姓名</strong>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text material-icons">face</span>
+                                        </div>
+                                        {{ form.full_name(class_="form-control") }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    {{ form.csrf_token }}
+                                    <strong class="text-muted d-block mb-2">邮箱</strong>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text material-icons">email</span>
+                                            </div>
+                                            {{ form.email(class_="form-control") }}
+                                        </div>
+                                    </div>
+                                    <strong class="text-muted d-block mb-2">密码</strong>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text material-icons">lock</span>
+                                            </div>
+                                            {{ form.password(class_="form-control") }}
+                                        </div>
+                                    </div>
+                                    <strong class="text-muted d-block mb-2">确认密码</strong>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text material-icons">lock</span>
+                                        </div>
+                                        {{ form.confirm_password(class_="form-control") }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row col-md-12">
+                            <div class="form-group col-md-4">
+                                {{ form.csrf_token }}
+                                <strong class="text-muted d-block mb-2">出生日期</strong>
+                                {{ form.birthday(class_="form-control") }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <strong class="text-muted d-block mb-2">入职日期</strong>
+                                  {{ form.entry_date(class_="form-control") }}
+                            </div>
+                            <div class="form-group right col-md-4">
+                                <strong class="text-muted d-block mb-2">性别</strong>
+                                {{ wtf.form_field(form.gender,class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="form-row col-md-12">
+                            <div class="form-group col-md-4">
+                                {{ form.csrf_token }}
+                                <strong class="text-muted d-block mb-2">所在城市</strong>
+                                  {{ form.location(class_="form-control") }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <strong class="text-muted d-block mb-2">最高学历</strong>
+                                {{ form.highest_education(class_="form-control") }}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <strong class="text-muted d-block mb-2">学校</strong>
+                                {{ form.university(class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="form-row col-md-12">
+                            <div class="form-group col-md-12 ">
+                                {{ form.csrf_token }}
+                                <strong class="text-muted d-block mb-2">简介</strong>
+                                {{ form.cv(class_="form-control") }}
+                            </div>
+                        </div>
+                        <div class="p-3 text-center">
+                            <div class="text-center btn-lg m-0">
+                                {{ form.submit(class_="mb-2 btn btn-pill btn-outline-primary mr-2") }}
+                            </div>
+                        </div>
+                    </form>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

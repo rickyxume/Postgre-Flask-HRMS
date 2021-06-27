@@ -1,0 +1,122 @@
+{% block header %}
+    <div class="main-navbar sticky-top bg-white">
+      {% if current_user.is_authenticated %}
+            {% if current_user.is_admin %}
+                  <!-- 管理员Main Navbar -->
+                  <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+                <!--这个是正常尺寸时的搜索栏-->
+                      <form method="post" action="{{ url_for('admin.search_employees') }}" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                          <div class="input-group input-group-seamless ml-3">
+                              <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                      <i class="fas fa-search"></i>
+                                  </div>
+                              </div>
+                              <input class="navbar-search form-control" type="text" placeholder="搜索..." aria-label="Search">
+                          </div>
+                      </form>
+                      <ul class="navbar-nav border-left flex-row ">
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                  <img class="user-avatar rounded-circle mr-2 material-icons-size64"  src="{{ url_for('static',filename='img/icon.jpg') }}" alt="User Avatar">
+                                  <span class="d-none d-md-inline-block">{{ current_user.username }}</span>
+                              </a>
+                              <!--下拉栏里跳转到账号信息或者登出-->
+                              <div class="dropdown-menu dropdown-menu-small">
+                                  <a class="dropdown-item" href="#">
+                                      <i class="material-icons">person</i> 我的 </a>
+                                  <a class="dropdown-item" href="{{ url_for('home.admin_dashboard') }}">
+                                      <i class="material-icons">&#xE6E1;</i> 数据看板 </a>
+                                  <a class="dropdown-item" href="{{ url_for('admin.list_departments') }}">
+                                      <i class="material-icons">table_chart</i> 部门管理 </a>
+                                  <a class="dropdown-item" href="{{ url_for('admin.list_roles') }}">
+                                      <i class="material-icons">vertical_split</i> 职位管理 </a>
+                                  <a class="dropdown-item" href="{{ url_for('admin.list_employees') }}">
+                                      <i class="material-icons">people</i> 员工管理 </a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item text-danger" href="{{ url_for('auth.logout') }}">
+                                      <i class="material-icons text-danger">&#xE879;</i> 登出 </a>
+                              </div>
+                          </li>
+                      </ul>
+                      <nav class="nav"><a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                              <i class="material-icons">&#xE5D2;</i>
+                          </a>
+                      </nav>
+                  </nav>
+
+            {% else %}
+            <!--否则为员工时-->
+                  <!-- Main Navbar -->
+                  <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+                      <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                          <div class="input-group input-group-seamless ml-3">
+                              <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                      <i class="material-icons text-success material-icons-size64">check</i>
+                                      <a class="d-md-inline-block text-success">可以查看和修改账号信息</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                      <ul class="navbar-nav border-left flex-row ">
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                  <i class="user-avatar rounded-circle mr-2 material-icons material-icons-size64">face</i>
+                                  <span class="d-none d-md-inline-block">{{ current_user.username }}</span>
+                              </a>
+                              <!--下拉栏里跳转到账号信息或者登出-->
+                              <div class="dropdown-menu dropdown-menu-small">
+                                  <a class="dropdown-item" href="user-profile-lite.html">
+                                      <i class="material-icons">person</i> 我的 </a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item text-danger" href="{{ url_for('auth.logout') }}">
+                                      <i class="material-icons text-danger">&#xE879;</i> 登出 </a>
+                              </div>
+                          </li>
+                      </ul>
+                      <nav class="nav"><a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                              <i class="material-icons">&#xE5D2;</i>
+                          </a>
+                      </nav>
+                  </nav>
+            {% endif %}
+            <!--结束管理员和员工权限页面划分-->
+      {% else %}
+      <!--否则为游客时-->
+            <!-- Main Navbar -->
+              <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+                      <form action="#" class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+                          <div class="input-group input-group-seamless ml-3">
+                              <div class="input-group-prepend">
+                                  <div class="input-group-text">
+                                      <i class="material-icons text-danger">error</i>
+                                      <a class="d-md-inline-block text-danger">游客身份无法访问，请登录或注册账号</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                      <ul class="navbar-nav border-left flex-row ">
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                  <i class="user-avatar rounded-circle mr-2 material-icons material-icons-size64">person</i>
+                                  <span class="d-none d-md-inline-block"> 游客 </span>
+                              </a>
+                              <!--下拉栏里登录或注册-->
+                              <div class="dropdown-menu dropdown-menu-small">
+                                  <a class="dropdown-item text-primary" href="{{ url_for('auth.login') }}">
+                                      <i class="material-icons text-primary">login</i> 登录 </a>
+                                  <a class="dropdown-item text-success" href="{{ url_for('auth.register') }}">
+                                      <i class="material-icons text-success">person</i> 注册 </a>
+                              </div>
+                          </li>
+                      </ul>
+                      <nav class="nav"><a href="#" class="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                              <i class="material-icons">&#xE5D2;</i>
+                          </a>
+                      </nav>
+              </nav>
+      {% endif %}
+    </div>
+
+{% endblock %}
